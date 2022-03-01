@@ -14,4 +14,16 @@ public class TempControllerTest {
 		// src/main/resources/static/home.html
 		return "/home.html";
 	}
+	@GetMapping("/temp/img")
+	public String tempImg() {
+		System.out.println("temp at img");
+		return "/c11.JPG";
+	}
+	@GetMapping("/temp/jsp")
+	public String tempJsp() {
+//	      prefix: /WEB-INF/views/
+//	      suffix: .jsp
+		System.out.println("temp at jsp");
+		return "test";
+	}
 }
