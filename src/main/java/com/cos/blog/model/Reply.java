@@ -16,7 +16,7 @@ import org.hibernate.annotations.CreationTimestamp;
 public class Reply {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(nullable = false, length = 200)
 	private String content;
@@ -32,7 +32,7 @@ public class Reply {
 	@CreationTimestamp
 	private Timestamp createDate;
 
-	public Reply(int id, String content, Board board, User user, Timestamp createDate) {
+	public Reply(Long id, String content, Board board, User user, Timestamp createDate) {
 		this.id = id;
 		this.content = content;
 		this.board = board;
@@ -40,11 +40,11 @@ public class Reply {
 		this.createDate = createDate;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -79,6 +79,8 @@ public class Reply {
 	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
 	}
+
+	
 
 	
 }

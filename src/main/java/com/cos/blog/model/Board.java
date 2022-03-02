@@ -21,7 +21,7 @@ import antlr.collections.List;
 public class Board {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
-	private int id;
+	private Long id;
 	
 	@Column(nullable = false, length = 100)
 	private String title;
@@ -42,20 +42,22 @@ public class Board {
 	@CreationTimestamp
 	private Timestamp createDate;
 
-	public Board(int id, String title, String content, int count, User user, Timestamp createDate) {
+	public Board(Long id, String title, String content, int count, User user, java.util.List<Reply> reply,
+			Timestamp createDate) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.count = count;
 		this.user = user;
+		this.reply = reply;
 		this.createDate = createDate;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -91,6 +93,14 @@ public class Board {
 		this.user = user;
 	}
 
+	public java.util.List<Reply> getReply() {
+		return reply;
+	}
+
+	public void setReply(java.util.List<Reply> reply) {
+		this.reply = reply;
+	}
+
 	public Timestamp getCreateDate() {
 		return createDate;
 	}
@@ -98,6 +108,6 @@ public class Board {
 	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
 	}
-	
+
 	
 }
