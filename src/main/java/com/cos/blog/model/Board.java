@@ -26,7 +26,7 @@ public class Board {
 	@Column(nullable = false, length = 100)
 	private String title;
 	
-	@Lob //대용량 데이터
+	@Lob //대용량 데이터 //
 	private String content; // 섬머노트 라이브러리 <html>태그 有
 	
 	@ColumnDefault("0")
