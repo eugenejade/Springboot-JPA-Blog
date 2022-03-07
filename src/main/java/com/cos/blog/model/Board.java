@@ -39,7 +39,7 @@ public class Board {
 	@OneToMany(mappedBy="board", fetch = FetchType.EAGER) //mappedBy 연관관계의 주인이 아니다 //FK가 아니다 
 	private java.util.List<Reply> reply;
 	
-	@CreationTimestamp
+	@CreationTimestampb //git 수정
 	private Timestamp createDate;
 
 	public Board(Long id, String title, String content, int count, User user, java.util.List<Reply> reply,
